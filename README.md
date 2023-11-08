@@ -67,18 +67,6 @@ news-scrap-image-url-fix
 .
 ├── README.md
 ├── log
-│   ├── 2023-11-08 15-52-37
-│   │   ├── naver_urls_still_without_image_url.txt
-│   │   └── naver_wrong_urls.txt
-│   ├── 2023-11-08 15-53-02
-│   │   ├── daum_urls_still_without_image_url.txt
-│   │   └── daum_wrong_urls.txt
-│   ├── 2023-11-08 15-53-57
-│   │   ├── daum_urls_still_without_image_url.txt
-│   │   └── daum_wrong_urls.txt
-│   ├── 2023-11-08 16-21-24
-│   │   ├── naver_urls_still_without_image_url.txt
-│   │   └── naver_wrong_urls.txt
 │   ├── 2023-11-08 18-07-28
 │   │   ├── daum_test_result_summary.txt
 │   │   ├── daum_urls_still_without_image_url.txt
