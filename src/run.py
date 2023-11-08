@@ -7,13 +7,17 @@ from sqlalchemy import create_engine, text
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as Chrome
+import yaml
 
 
-USER = 'news'
-PASSWORD = 'Illunex123!'
-HOST = '220.118.147.58'
-PORT = '3300'
-DATABASE = 'portal_news_scraper'
+with open('secrets.yaml', 'r') as stream:
+    secrets = yaml.safe_load(stream)
+
+USER = secrets['database_credentials']['USER']
+PASSWORD = secrets['database_credentials']['PASSWORD']
+HOST = secrets['database_credentials']['HOST']
+PORT = secrets['database_credentials']['PORT']
+DATABASE = secrets['database_credentials']['DATABASE']
 
 engine = create_engine(f'mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}')
 
