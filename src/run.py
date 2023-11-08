@@ -6,10 +6,10 @@ from sqlalchemy import text
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as Chrome
 
-from src.settings import engine, driver_path
-from src.utils import get_current_time, get_image_url_from_daum, get_image_url_from_naver, save_to_file
+from settings import engine, driver_path
+from utils import get_current_time, get_image_url_from_daum, get_image_url_from_naver, save_to_file
 
-engine = engine()
+engine = engine
 
 
 if __name__ == "__main__":
