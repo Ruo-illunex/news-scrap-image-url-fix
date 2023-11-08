@@ -62,3 +62,48 @@ news-scrap-image-url-fix
 ![image](https://github.com/Ruo-illunex/news-scrap-image-url-fix/assets/149987874/3cb979dd-ed8e-4f13-aa97-595d353a95fa)
 
 
+# 프로젝트 구조
+```
+.
+├── README.md
+├── log
+│   ├── 2023-11-08 15-52-37
+│   │   ├── naver_urls_still_without_image_url.txt
+│   │   └── naver_wrong_urls.txt
+│   ├── 2023-11-08 15-53-02
+│   │   ├── daum_urls_still_without_image_url.txt
+│   │   └── daum_wrong_urls.txt
+│   ├── 2023-11-08 15-53-57
+│   │   ├── daum_urls_still_without_image_url.txt
+│   │   └── daum_wrong_urls.txt
+│   ├── 2023-11-08 16-21-24
+│   │   ├── naver_urls_still_without_image_url.txt
+│   │   └── naver_wrong_urls.txt
+│   ├── 2023-11-08 18-07-28
+│   │   ├── daum_test_result_summary.txt
+│   │   ├── daum_urls_still_without_image_url.txt
+│   │   └── daum_wrong_urls.txt
+│   └── 2023-11-08 18-11-54
+│       ├── naver_test_result_summary.txt
+│       ├── naver_urls_still_without_image_url.txt
+│       └── naver_wrong_urls.txt
+├── poetry.lock
+├── pyproject.toml
+├── secret
+│   └── secrets.yaml
+└── src
+    ├── __pycache__
+    │   ├── settings.cpython-310.pyc
+    │   └── utils.cpython-310.pyc
+    ├── run.py
+    ├── settings.py
+    └── utils.py
+
+10 directories, 23 files
+```
+
+# 실행
+src/경로에서 아래 cmd 입력
+```
+python run.py [검사할 url 개수:int] [포털명: daum or naver]
+```
