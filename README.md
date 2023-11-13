@@ -53,45 +53,41 @@ news-scrap-image-url-fix
 
 ## [세부 업무 내용]
 
-### 1. 개선된 코드로 db에서 image_url 이 'no image'인 가장 최신 레코드 1000건 테스트 결과는 아래와 같음
+### 2023-11-07 ~ 2023-11-08
+1. 개선된 코드로 db에서 image_url 이 'no image'인 가장 최신 레코드 1000건 테스트 결과는 아래와 같음
+    - Daum 기사 - 테스트 결과
+    ![image](https://github.com/Ruo-illunex/news-scrap-image-url-fix/assets/149987874/e08447eb-8537-4776-8075-59e82d3c7340)
 
-- Daum 기사 - 테스트 결과
-![image](https://github.com/Ruo-illunex/news-scrap-image-url-fix/assets/149987874/e08447eb-8537-4776-8075-59e82d3c7340)
+    - Naver 기사 - 테스트 결과
+    ![image](https://github.com/Ruo-illunex/news-scrap-image-url-fix/assets/149987874/3cb979dd-ed8e-4f13-aa97-595d353a95fa)
 
-- Naver 기사 - 테스트 결과
-![image](https://github.com/Ruo-illunex/news-scrap-image-url-fix/assets/149987874/3cb979dd-ed8e-4f13-aa97-595d353a95fa)
+
+### 2023-11-13
+- DB에서 created 필드에서 원하는 기간의 image_url이 없는 데이터만 조회
+- 해당 url에서 image url 데이터 스크랩 후 DB의 image_url 필드 업데이트  
 
 
 # 프로젝트 구조
+- 2023-11-13 업데이트
 ```
 .
-├── README.md
+ 
 ├── log
-│   ├── 2023-11-08 18-07-28
-│   │   ├── daum_test_result_summary.txt
-│   │   ├── daum_urls_still_without_image_url.txt
-│   │   └── daum_wrong_urls.txt
-│   └── 2023-11-08 18-11-54
-│       ├── naver_test_result_summary.txt
-│       ├── naver_urls_still_without_image_url.txt
-│       └── naver_wrong_urls.txt
 ├── poetry.lock
 ├── pyproject.toml
+├── query
+│   └── queries.py
+├── run.py
 ├── secret
 │   └── secrets.yaml
 └── src
-    ├── __pycache__
-    │   ├── settings.cpython-310.pyc
-    │   └── utils.cpython-310.pyc
-    ├── run.py
     ├── settings.py
     └── utils.py
-
-10 directories, 23 files
 ```
 
-# 실행
-src/경로에서 아래 cmd 입력
-```
-python run.py [검사할 url 개수:int] [포털명: daum or naver]
+# command line 실행
+- src/경로에서 아래 cmd 입력(2023-11-13 업데이트)
+```python
+# python run.py [start date : str] [end date : str] [포털명: daum or naver]
+python run.py 2023-11-10 2023-11-11 daum
 ```
