@@ -47,7 +47,7 @@ def get_image_url_from_naver(driver) -> str:
 
 
 # 파일에 결과를 저장하는 함수를 정의합니다.
-def save_to_file(file_name, data_list):
+def save_to_file(file_name, data_dictionary, action):
     with open(file_name, 'a') as f:  # 'a'는 파일에 추가(append)하기 위한 모드입니다.
-        for url in data_list:
-            f.write(url + '\n')
+        for id, (current_time, url) in data_dictionary.items():
+            f.write(f'{current_time} [{action}] {id}, {url}\n')
